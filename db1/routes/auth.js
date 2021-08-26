@@ -43,6 +43,6 @@ bcrypt.hash(req.body.password, rounds,(error, hash) => {
 });
 
 function generateToken(user){
-    return JsonWebTokenError.toString({data: user}, tokenSecret, {exporesIn: '24h'})
+ return Jwt.sign({data: user}, tokenSecret, { expiresIn: '24h'})
 }
 module.exports = router
