@@ -5,7 +5,7 @@ const authRoute = require('./routes/auth');
 
 const  dbURI = "mongodb://localhost/employeeRegistration"
 app.use(express.json())
-app.use('/api/auth', authRoute)
+app.use(authRoute)
 
 mongoose.connect(dbURI , {useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection
