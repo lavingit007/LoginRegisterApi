@@ -1,7 +1,11 @@
-const express = require('express');
-const { JsonWebTokenError } = require('jsonwebtoken');
+const express = require('express')
+const jwt  = require('jsonwebtoken')
 const router = express.Router()
 const user = require('../models/user')
+const rounds = 10
+const tokenSecret = 'my-token-secret'
+const bcrypt = require('bcrypt')
+
 
 router.get('/login', (req, res) => {
     User.findOne({email: req.body.email})
