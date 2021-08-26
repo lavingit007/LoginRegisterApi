@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const app = express()
 const authRoute = require('./routes/auth');
 
-const  dbURI = "mongodb://localhost/employeeRegistration"
+const  dbURI = "mongodb://localhost/pie"
 app.use(express.json())
 app.use(authRoute)
 
